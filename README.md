@@ -50,6 +50,14 @@ Use a mesma versão do Elden Flow em todos os clientes e no servidor, junto de F
 
 Veja [servidor e LAN](docs/SERVER.md), [validação realizada](docs/VALIDATION.md) e [compilação e dados locais](docs/BUILD.md). JNA é incluído pelo build; VulkanMod não é incorporado.
 
+## Projeto de fã para fã
+
+Elden Flow é desenvolvido como um projeto gratuito, de fã para fã, para diversão e experimentação dentro do Minecraft. A distribuição oficial do projeto não tem objetivo de venda ou monetização e não pretende substituir Elden Ring. O projeto não é afiliado, autorizado ou endossado por FromSoftware, Bandai Namco, Mojang ou Microsoft.
+
+Os créditos identificam tanto o código reutilizado quanto a origem das animações usadas na prévia local. Gratuidade, créditos e ausência de intenção comercial expressam a proposta do projeto; não constituem autorização dos titulares nem uma garantia de aprovação por plataformas de distribuição. A existência de outros projetos de fãs também não é apresentada como permissão para este.
+
+Essa intenção de distribuição gratuita não altera as permissões das licenças de código existentes, incluindo a MIT, nem acrescenta uma restrição comercial ao código de terceiros. Os recursos de Elden Ring não são licenciados pela licença MIT deste repositório.
+
 ## Código, dados e distribuição
 
 Este repositório contém código-fonte e recursos próprios. Os arquivos de animação e tabelas extraídos do jogo, DLLs proprietárias, saves e arquivos privados não fazem parte do pacote de código. Uma compilação de testes com dados sintéticos não reproduz as animações reais da prévia local. Consulte as instruções de build antes de tentar executá-la.
