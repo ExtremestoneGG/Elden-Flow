@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "dev.eldensteve.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SoulExperienceMixin",
+    "ServerDefenseMixin",
+    "ProjectileDodgeMixin",
+    "ParryStaggerMixin",
+    "ServerBodyMixin",
+    "ServerAttackMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

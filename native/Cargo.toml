@@ -1,0 +1,20 @@
+[package]
+name = "elden_steve_core"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+glam = "=0.30.9"
+
+[features]
+default = ["fixture-data"]
+fixture-data = []
+game-data = []
+
+[profile.release]
+opt-level = 2
+panic = "unwind"

@@ -1,0 +1,19 @@
+{
+  "category.eldensteve": "Elden Flow",
+  "key.eldensteve.toggle": "Toggle Elden / Steve controller",
+  "key.eldensteve.dodge": "Dodge (release) / sprint (hold)",
+  "key.eldensteve.walk": "Walk",
+  "key.eldensteve.sprint": "Sprint (no dodge on release)",
+  "key.eldensteve.inventory": "Inventory in Elden mode",
+  "key.eldensteve.test": "Test in Elden Prototype Lab world",
+  "key.eldensteve.dodge_elden": "Esquiva (soltar) / correr (segurar F)",
+  "key.eldensteve.jump_elden": "Pular (Espaço)",
+  "key.eldensteve.walk_elden": "Caminhar (Alt)",
+  "key.eldensteve.sprint_optional": "Corrida separada (opcional; sem tecla padrão)",
+  "key.eldensteve.lock_elden": "Fixar / soltar alvo (Q)",
+  "key.eldensteve.lock_mouse": "Fixar / soltar alvo (botão do meio)",
+  "key.eldensteve.interact_elden": "Interagir (E)",
+  "key.eldensteve.lab": "Preparar / reiniciar arena de teste (F8)",
+  "key.eldensteve.debug": "Mostrar trajetória ativa da lâmina (F9)",
+  "key.eldensteve.editor": "3D weapon editor"
+}

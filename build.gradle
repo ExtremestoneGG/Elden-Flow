@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+	id 'fabric-loom' version "${loom_version}"
 	id 'maven-publish'
 }
 
@@ -15,7 +15,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"eldensteve" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
@@ -23,9 +23,18 @@ loom {
 }
 
 dependencies {
+    modImplementation files('libs/modmenu-11.0.5.jar')
+    // Vulkan is the requested default for the local test profile.
+        modRuntimeOnly files('../../Research/vulkan/VulkanMod-0.6.7+1.21.1.jar')
+        modRuntimeOnly fileTree(dir: '../../Research/vulkan/nested', include: ['*.jar'])
+    modImplementation fileTree(dir: 'libs/swords', include: ['*.jar','nested/*.jar'])
+    modImplementation files('libs/controlify-2.4.4+1.21.1-fabric.jar')
+    modImplementation fileTree(dir: 'libs/controlify-deps', include: ['*.jar'])
+    implementation 'net.java.dev.jna:jna:5.14.0'
+    include 'net.java.dev.jna:jna:5.14.0'
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
+	mappings "net.fabricmc:yarn:1.21.1+build.3:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
@@ -56,6 +65,8 @@ java {
 }
 
 jar {
+    from('native/UPSTREAM-LICENSE.md')
+    from('NOTICE.md')
 	def projectName = project.name
 	inputs.property "projectName", projectName
 
@@ -79,4 +90,32 @@ publishing {
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
 	}
+}
+
+tasks.register('writeRigCheckClasspath') {
+    doLast {
+        file('../../Cache/rig-classpath.txt').text = sourceSets.client.runtimeClasspath.asPath
+    }
+}
+tasks.register('exportPrototypeLaunch') {
+    dependsOn 'configureClientLaunch'
+    doLast {
+        def run = tasks.named('runClient').get()
+        file('../../Cache/prototype-launch.json').text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([
+            main: run.mainClass.get(), classpath: run.classpath.asPath,
+            jvm: run.allJvmArgs, args: run.args, directory: run.workingDir.absolutePath
+        ]))
+    }
+}
+
+
+loom {
+    runs {
+        client {
+            runDir '../../Minecraft-Dev'
+            vmArg '-Xmx3G'
+            vmArg '-Djava.io.tmpdir=D:/EldenMinecraftProject/Cache/temp'
+            programArgs '--width', '960', '--height', '600'
+        }
+    }
 }

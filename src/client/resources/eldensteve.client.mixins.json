@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "package": "dev.eldensteve.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "TravelMixin",
+    "PlayerRenderMixin",
+    "KeyBindingMixin",
+    "KeyBindingAccess",
+    "CombatInputMixin",
+    "PlayerInputMixin",
+    "CombatCameraMixin",
+    "ControlifyBindingMixin",
+    "BodyCollisionMixin",
+    "HandledScreenAccess",
+    "ReticleMixin",
+    "InventoryEffectsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
